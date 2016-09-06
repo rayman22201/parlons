@@ -15,16 +15,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Rendering a simple centered box
 class App extends _react.Component {
   render() {
-    return _react2.default.createElement(
-      'box',
-      { top: 'center',
-        left: 'center',
-        width: '50%',
-        height: '50%',
-        border: { type: 'line' },
-        style: { border: { fg: 'blue' } } },
-      'Hello World!'
-    );
+    return _react2.default.createElement('list', { top: 'left',
+      left: 'left',
+      width: '20%',
+      height: '100%',
+      border: { type: 'line' },
+      style: { border: { fg: 'blue' } },
+      items: ['joe.schmoe', 'jane.schmoe'] });
   }
 }
 
