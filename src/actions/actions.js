@@ -16,6 +16,14 @@ export function selectBuffer(bufferIndex) {
   return { type: types.SELECT_BUFFER, bufferIndex }
 }
 
+export function addBuffer(name, msgs) {
+  return { type: types.ADD_BUFFER, name, msgs }
+}
+
+export function removeBuffer(bufferIndex) {
+  return { type: types.removeBuffer, bufferIndex }
+}
+
 export function selectMsg(msgIndex) {
   return { type: types.SELECT_MSG, msgIndex }
 }
@@ -31,6 +39,11 @@ export function setActiveLink(linkIndex) {
 export function selectLink(url) {
   //@TODO: open browser with the url
   return { type: types.SELECT_LINK, url }
+}
+
+export function copyMsg(text) {
+  //@TODO: copy text to the clipboard
+  return { type: types.COPY_MSG, text }
 }
 
 // Possibly refactor to async.

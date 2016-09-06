@@ -52,8 +52,8 @@ export class ChatList extends Component {
             if(row.length > 1) {
               return (
                 <element key={rowIndex} top={rowIndex}>
-                  <box width="70" style={(rowIndex == scrollSelected) && this.props.style.selected}>{row[0]} :</box>
-                  <box style={(rowIndex == scrollSelected) && this.props.style.selected} tags={true} width="90%" left="70">{row[1]}</box>
+                  <box width="70" style={(rowIndex == scrollSelected) ? this.props.style.selected : { bg: -1, fg: -1 }}>{row[0]} :</box>
+                  <box style={(rowIndex == scrollSelected) ? this.props.style.selected : { bg: -1, fg: -1 }} tags={true} width="90%" left="70">{row[1]}</box>
                 </element>
                 )
             } else {

@@ -5,14 +5,17 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import {App} from './components/App.js';
+import appReducer from './reducers';
 
 // Default store that does nothing.
-const store = applyMiddleware(thunk)(createStore)((state, action) => state);
+const store = applyMiddleware(thunk)(createStore)(appReducer);
 
 // @TODO:
 // - make tabIndex stateless
 // - highlight urls / select urls / copy pasta urls
 // url regex: /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b((\/)?[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/ig
+// 
+// abstract out my custom redux friendly list component from ChatList and BufferList
 
 // Creating our screen
 const screen = blessed.screen({
