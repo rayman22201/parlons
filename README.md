@@ -1,6 +1,8 @@
 # parlons
 A CLI Node multi-protocol chat app
 Parlons is "We speak" en Francais.
+Also, "Parlons Chat" is "we talk cat" in French, which is terrible French grammar but a hilarious translation non-the-less.
+There always needs to be more Cats on the internet!
 Built using Blessed, React, Redux, and a whole bunch of node modules.
 
 ### Why?

@@ -14,19 +14,19 @@ const store = applyMiddleware(thunk)(createStore)(appReducer);
 // - make tabIndex stateless
 // - highlight urls / select urls / copy pasta urls
 // url regex: /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b((\/)?[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/ig
-// 
-// abstract out my custom redux friendly list component from ChatList and BufferList
+//
 
 // Creating our screen
 const screen = blessed.screen({
   autoPadding: true,
   smartCSR: true,
+  resizeTimeout:10,
   title: 'Parlons Chat!',
   debug: true
 });
 console.log = screen.debug.bind(screen);
 
-//screen.on("resize", () => screen.debug("resized"));
+
 // screen.on('keypress', function(ch, key){
 //   console.log(JSON.stringify(key));
 // });
@@ -40,7 +40,13 @@ screen.key(['tab'], function(ch, key) {
 });
 
 // Rendering the React app using our screen
-const component = render(
-  <Provider store={store}>
-    <App />
-  </Provider>, screen);
+const renderApp = function() {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    screen
+  );
+};
+screen.on("resize", renderApp);
+renderApp();
